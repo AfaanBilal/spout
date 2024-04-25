@@ -147,7 +147,8 @@ class RowIterator implements IteratorInterface
 
         if ($rowData !== false) {
             // str_replace will replace NULL values by empty strings
-            $rowDataBufferAsArray = \str_replace(null, null, $rowData);
+            // $rowDataBufferAsArray = \str_replace(null, null, $rowData);
+            $rowDataBufferAsArray = $rowData;
             $this->rowBuffer = $this->entityFactory->createRowFromArray($rowDataBufferAsArray);
             $this->numReadRows++;
         } else {
